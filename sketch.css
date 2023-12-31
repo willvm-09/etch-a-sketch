@@ -1,19 +1,33 @@
 * {
     margin: 0;
     padding: 0;
+    text-align: center;
+    color: white;
 }
 
 body {
     background-color: #24272e;
 }
 
+h1 {
+    margin: 15px;
+}
+
 #mainDiv {
     display: flex;
     flex-wrap: wrap;
     background-color: white;
-    margin: 100px auto;
+    margin: 20px auto;
 }
 
 .cell {
     border: 1px solid whitesmoke;
 }
+
+.btn {
+    color: black;
+    padding:10px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
