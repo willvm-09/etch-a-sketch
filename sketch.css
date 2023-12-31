@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #24272e;
+    background-color: #66494a;
 }
 
 h1 {
@@ -31,3 +31,14 @@ h1 {
     border-radius: 8px;
 }
 
+.slider {
+   /* -webkit-appearance: none; /* removes default slider styling */
+   /* appearance: none; */
+    height: 20px;
+    width: 20%;
+    cursor: pointer;
+   /* outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s; */
+}

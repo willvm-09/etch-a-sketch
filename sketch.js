@@ -9,7 +9,7 @@ const sliderContainer =document.querySelector("#sliderContainer");
 const slider = document.querySelector("#slider");
 const sliderValue = document.querySelector("#sliderValue");
 
-sliderValue.textContent = `${slider.value} x ${slider.value} (Resolution)`;
+sliderValue.textContent = `${slider.value} x ${slider.value} Resolution`;
 
 function changeBackgroundColor(){
     this.style.backgroundColor = "black";
@@ -38,6 +38,13 @@ function removeGridCells() {
     while (mainDiv.firstChild) {
         mainDiv.removeChild(mainDiv.firstChild);
     }
+}
+
+slider.oninput = function () {
+    let txt = `${this.value} x ${this.value} Size`; 
+    sliderValue.innerHTML = txt;
+    removeGridCells();
+    createGridCells(this.value);
 }
 
 createGridCells(40);
