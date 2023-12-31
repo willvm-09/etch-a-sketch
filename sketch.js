@@ -6,6 +6,10 @@ const mainDiv = document.querySelector("#mainDiv");
 mainDiv.style.width = `${gridSize}px`;
 mainDiv.style.height = `${gridSize}px`;
 
+function changeBackgroundColor () {
+    this.style.backgroundColor = "black";
+}
+
 function createGridCells(){
     for (let i=0; i<(rows * columns); i++) {
         const gridCell = document.createElement("div");
@@ -15,6 +19,8 @@ function createGridCells(){
         gridCell.classList.add("cell");
 
         mainDiv.appendChild(gridCell);
+
+        gridCell.addEventListener("mouseover", changeBackgroundColor);
     }
 }
 
