@@ -11,17 +11,17 @@ const sliderValue = document.querySelector("#sliderValue");
 
 sliderValue.textContent = `${slider.value} x ${slider.value} Resolution`;
 
-function changeBackgroundColor(){
+function blackBackgroundColor(){
     this.style.backgroundColor = "black";
 }
 
 function createGridCells(squaresPerRow){
 
-    const numOfSquares = (squaresPerRow * squaresPerRow);
-    const widthOrHeight = `${(gridSize / squaresPerRow) - 2}px`;
+    let numOfSquares = (squaresPerRow * squaresPerRow);
+    let widthOrHeight = `${(gridSize / squaresPerRow) - 2}px`;
     
     for (let i=0; i<numOfSquares; i++) {
-        const gridCell = document.createElement("div");
+        let gridCell = document.createElement("div");
 
         gridCell.style.width = widthOrHeight;
         gridCell.style.height = widthOrHeight;
@@ -29,9 +29,8 @@ function createGridCells(squaresPerRow){
 
         mainDiv.appendChild(gridCell);
 
-        gridCell.addEventListener("mouseover", changeBackgroundColor);
-        
-}
+        gridCell.addEventListener("mouseover", blackBackgroundColor);
+
 }
 
 function removeGridCells() {
@@ -46,5 +45,5 @@ slider.oninput = function () {
     removeGridCells();
     createGridCells(this.value);
 }
-
-createGridCells(40);
+};
+ createGridCells(16);
