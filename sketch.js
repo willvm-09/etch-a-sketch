@@ -1,61 +1,21 @@
+const gridSize = 600;
+let rows = 16;
+let columns = 16;
 
-function sixteenDivFunction() {
-    for(let i=1; i<=16; i++){
-    let div = document.createElement("div");
-    div.classList.add("divs");
-    document.querySelector("#mainDiv").appendChild(div);
-}};
+const mainDiv = document.querySelector("#mainDiv");
+mainDiv.style.width = `${gridSize}px`;
+mainDiv.style.height = `${gridSize}px`;
 
-sixteenDivFunction();
+function createGridCells(){
+    for (let i=0; i<(rows * columns); i++) {
+        const gridCell = document.createElement("div");
 
-function eightDivFunction() {
-    let eightDivs = document.querySelector("#eightByEight");
-    eightDivs.addEventListener("click", () => {
+        gridCell.style.width = `${(gridSize /columns) - 2}px`;
+        gridCell.style.height = `${(gridSize / rows) - 2}px`;
+        gridCell.classList.add("cell");
 
-    for (let x=1; x<=48; x++) {
-        let eightDiv = document.createElement("div");
-        eightDiv.classList.add("divs");
-        document.querySelector("#mainDiv").appendChild(eightDiv);
+        mainDiv.appendChild(gridCell);
     }
-})};
+}
 
-eightDivFunction();
-
-function twelveDivFunction() {
-let twelveDivs = document.querySelector("#twelveByTwelve");
-twelveDivs.addEventListener("click", () => {
-    for (let i=1; i<=80; i++) {
-        let twelveDiv = document.createElement("div");
-        twelveDiv.classList.add("divs");
-        document.querySelector("#mainDiv").appendChild(twelveDiv);
-    }
-})};
-
-twelveDivFunction();
-
-function sixtyFourDivFunction() {
-let sixteenDivs = document.querySelector("#sixteenBySixteen");
-sixteenDivs.addEventListener("click", () => {
-    for (let i=1; i<112; i++) {
-        let sixteenDiv = document.createElement("div");
-        sixteenDiv.classList.add("divs");
-        document.querySelector("#mainDiv").appendChild(sixteenDiv);
-    }
-})};
-
-sixtyFourDivFunction();
-
-function resetButton(){
-let reset = document.querySelector("#reset");
-reset.addEventListener("click", () => {
-        location.reload();
-    })};
-
-resetButton();
-
-
-
-
-
-
-
+createGridCells();
